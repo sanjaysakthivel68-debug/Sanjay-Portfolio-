@@ -11,6 +11,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Software Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
 
 <body>
@@ -188,10 +191,25 @@
 
       <div class="software-grid">
 
-        <div>Adobe Photoshop</div>
-        <div>DaVinci Resolve</div>
-        <div>Canva</div>
-        <div>CapCut</div>
+        <div class="software-card">
+          <i class="devicon-photoshop-plain"></i>
+          <span>Adobe Photoshop</span>
+        </div>
+
+        <div class="software-card">
+          <i class="devicon-davinciresolve-plain"></i>
+          <span>DaVinci Resolve</span>
+        </div>
+
+        <div class="software-card">
+          <i class="devicon-canva-original"></i>
+          <span>Canva</span>
+        </div>
+
+        <div class="software-card">
+          <i class="devicon-capcut-plain"></i>
+          <span>CapCut</span>
+        </div>
 
       </div>
 
@@ -216,27 +234,35 @@
       <div class="projects">
 
         <div class="project-card">
-          <div class="project-image">PROJECT 01</div>
+          <div class="project-image">
+            PROJECT 01
+          </div>
           <h3>Thumbnail Design</h3>
           <p>YouTube Thumbnail</p>
         </div>
 
         <div class="project-card">
-          <div class="project-image">PROJECT 02</div>
+          <div class="project-image">
+            PROJECT 02
+          </div>
           <h3>Video Editing</h3>
           <p>Short Form Video</p>
         </div>
 
         <div class="project-card">
-          <div class="project-image">PROJECT 03</div>
-          <h3>Social Media</h3>
-          <p>Instagram Design</p>
+          <div class="project-image">
+            PROJECT 03
+          </div>
+          <h3>Thumbnail Design</h3>
+          <p>YouTube Thumbnail</p>
         </div>
 
         <div class="project-card">
-          <div class="project-image">PROJECT 04</div>
-          <h3>Graphic Design</h3>
-          <p>Creative Design</p>
+          <div class="project-image">
+            PROJECT 04
+          </div>
+          <h3>Video Editing</h3>
+          <p>Social Media Video</p>
         </div>
 
       </div>
@@ -261,13 +287,21 @@
         <div>
           <span>📩</span>
           <h4>Email</h4>
-          <p>yourmail@gmail.com</p>
+          <p>
+            <a href="mailto:SanjaySakthivel68@gmail.com">
+              SanjaySakthivel68@gmail.com
+            </a>
+          </p>
         </div>
 
         <div>
           <span>📞</span>
-          <h4>Phone</h4>
-          <p>+91 XXXXX XXXXX</p>
+          <h4>WhatsApp</h4>
+          <p>
+            <a href="https://wa.me/917339087612" target="_blank">
+              +91 73390 87612
+            </a>
+          </p>
         </div>
 
         <div>
@@ -278,14 +312,36 @@
 
       </div>
 
+
+      <!-- CONTACT FORM -->
       <div class="contact-form">
 
-        <input type="text" placeholder="Your name">
-        <input type="email" placeholder="yourmail@gmail.com">
-        <input type="text" placeholder="Project / Service">
-        <textarea placeholder="Tell me about your project"></textarea>
+        <input
+          type="text"
+          id="clientName"
+          placeholder="Your name"
+        >
 
-        <button>Send Message ➜</button>
+        <input
+          type="email"
+          id="clientEmail"
+          placeholder="Your email"
+        >
+
+        <input
+          type="text"
+          id="clientService"
+          placeholder="Project / Service"
+        >
+
+        <textarea
+          id="clientMessage"
+          placeholder="Tell me about your project"
+        ></textarea>
+
+        <button type="button" onclick="sendWhatsAppMessage()">
+          Send Message ➜
+        </button>
 
       </div>
 
@@ -299,6 +355,7 @@
 
     <div>
       <h2>Sanjay.</h2>
+
       <p>
         Creative freelancer focused on design,
         thumbnails, video editing and social media.
@@ -307,6 +364,7 @@
 
     <div>
       <h4>Pages</h4>
+
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#work">Work</a>
@@ -315,6 +373,7 @@
 
     <div>
       <h4>Services</h4>
+
       <p>Thumbnail Design</p>
       <p>Video Editing</p>
       <p>Social Media Design</p>
@@ -329,6 +388,44 @@
 
 
   <script src="script.js"></script>
+
+
+  <!-- WhatsApp Contact -->
+  <script>
+
+    function sendWhatsAppMessage() {
+
+      const name =
+        document.getElementById("clientName").value.trim();
+
+      const email =
+        document.getElementById("clientEmail").value.trim();
+
+      const service =
+        document.getElementById("clientService").value.trim();
+
+      const message =
+        document.getElementById("clientMessage").value.trim();
+
+      if (!name || !message) {
+        alert("Please enter your name and project details.");
+        return;
+      }
+
+      const whatsappMessage =
+        "Hello Sanjay!%0A%0A" +
+        "Name: " + encodeURIComponent(name) + "%0A" +
+        "Email: " + encodeURIComponent(email) + "%0A" +
+        "Service: " + encodeURIComponent(service) + "%0A" +
+        "Project Details: " + encodeURIComponent(message);
+
+      window.open(
+        "https://wa.me/917339087612?text=" + whatsappMessage,
+        "_blank"
+      );
+    }
+
+  </script>
 
 </body>
   </html>
